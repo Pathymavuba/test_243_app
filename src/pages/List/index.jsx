@@ -21,13 +21,24 @@ const List = () => {
     </thead>
     <tbody>
     <tr>
-        <th scope="col"></th>
-        <th scope="col" class="text-center">01</th>
-        <th scope="col" class="text-center w-25">Mira</th>
-        <th scope="col" class="text-center">Safi</th>
-        <th scope="col" class="text-center w-25">Moricho</th>
-        <th scope="col" class="text-center"> <MdDelete/></th>
-        <th scope="col"></th>
+        <td ></td>
+        <td class="text-center">01</td>
+        <td class="text-center w-25">Mira</td>
+        <td class="text-center">Safi</td>
+        <td class="text-center w-25">Moricho</td>
+        <td class="text-center"> <MdDelete className='delete'/></td>
+        <td></td>
+
+    </tr>
+
+        <tr>
+        <td ></td>
+        <td class="text-center">02</td>
+        <td class="text-center w-25">Mira</td>
+        <td class="text-center">Safi</td>
+        <td class="text-center w-25">Moricho</td>
+        <td class="text-center"> <MdDelete className='delete'/></td>
+        <td></td>
 
     </tr>
   

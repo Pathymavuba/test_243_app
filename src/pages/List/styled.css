@@ -13,3 +13,8 @@
 table{
     width: 100%;
 }
+.delete{
+    color: red;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
