@@ -1,3 +1,27 @@
 .parent{
     width: 100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+.parent h1{
+    color: rgb(24, 24, 107);
+
+}
+
+.btn-voir{
+    padding: 7px 10px;
+    border: none;
+    background-color: rgb(24, 24, 107);
+    color: white;
+    cursor: pointer;
+}
+.btn-voir:hover{
+    background-color: white;
+    color:rgb(24, 24, 107) ;
+    border: 1px solid rgb(24, 24, 107) ;
+
+}
+
