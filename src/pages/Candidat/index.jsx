@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './styled.css'
 import Video from '../../components/Video'
 import questionStore from '../../store/questions';
@@ -14,9 +14,7 @@ const Candidat = () => {
   const currentCandidatId = currentIdStore(state=>state.currentCandidatId)
   const currentappliId = currentIdStore(state=>state.currentappliId)
 
-  useEffect(()=>{
-    console.log(currentCandidatId,'rigo')
-  },[])
+
 
   return (
     <div className='parent-candidat'>

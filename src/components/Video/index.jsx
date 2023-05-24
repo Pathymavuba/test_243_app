@@ -2,6 +2,7 @@ import React from "react";
 import "./styled.css";
 
 const Video = ({link,question}) => {
+  
   return (
     <>
      <div className="parent-video">
@@ -38,6 +39,9 @@ const Video = ({link,question}) => {
               </button>
             </form>
           </div>
+        </div>
+        <div className="mt-3"> 
+          <p>Les commentaires</p>
         </div>
         <div className="commentaire mt-3">
 
