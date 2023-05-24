@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect,useState } from 'react'
 import "./styled.css"
 import { MdDelete } from 'react-icons/md';
 import { useNavigate } from "react-router-dom";
 import candidatStore from '../../store/candidates';
+import questionStore from '../../store/questions';
+import applicationStore from '../../store/applications';
+import currentIdStore from '../../store/currentId';
 
 
 // import axios from 'axios';
@@ -11,8 +14,18 @@ import candidatStore from '../../store/candidates';
 const List = () => {
    const navigate = useNavigate()
   //  const [candidats,setCandidats]=useState([])
+  // const [currentCandidatId,setCurrentCandidatId] = useState("")
   const candidats = candidatStore(state=>state.candidats)
   const setCandidats = candidatStore(state=>state.setCandidats)
+  // const questions = questionStore(state=>state.questions)
+  const setQuestions = questionStore(state=>state.setQuestions)
+  // const applications = applicationStore(state=>state.applications)
+  const setApplications = applicationStore(state=>state.setApplications)
+  // const currentCandidatId = currentIdStore(state=>state.currentCandidatId)
+  const setCurrentCandidatId = currentIdStore(state=>state.setCurrentCandidatId)
+  
+
+
    
 
 
@@ -39,10 +52,12 @@ const List = () => {
     .then(response=>response.json())
     .then(data=>{
       setCandidats(data.candidates)
+      setQuestions(data.questions)
+      setApplications(data.applications)
     })
    
-   },[])
-    console.log(candidats)
+   },[setCandidats,setQuestions,setApplications])
+    // console.log(applications)
   return (
     <div className='parent-list'>
       <h1>Liste de tous les candidats ayant soumis</h1>
@@ -62,7 +77,7 @@ const List = () => {
       {
         candidats.map((candidat,index)=>{
           return(
-        <tr onClick={()=>navigate(`/candidat/${candidat.id}`)} key={index} style={{cursor:"pointer"}}>
+        <tr onClick={()=>{navigate(`/candidat/${candidat.id}`); setCurrentCandidatId(candidat.id)}} key={index} style={{cursor:"pointer"}}>
         <td ></td>
         <td class="text-center">{candidat.id}</td>
         <td class="text-center w-25">{candidat.name.split(" ")[1]}</td>
