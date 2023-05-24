@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className='parent'>
         <h1>Bienvenu sur Test_243</h1>
-        <Link to="/list">
+        <Link to="/candidat">
             <button className='btn-voir'>Voir la liste des candidats</button>
         </Link>
         

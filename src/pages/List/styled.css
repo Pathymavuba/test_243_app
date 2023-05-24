@@ -8,6 +8,11 @@
     align-items:center;
     padding:10px 5px ;
 }
+.parent-list h1{
+    font-size: 18px;
+    color: rgb(24, 24, 107);
+    font-weight: 600;
+}
 
 
 table{
