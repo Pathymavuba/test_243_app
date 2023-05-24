@@ -57,7 +57,7 @@ const List = () => {
       {
         candidats.map((candidat,index)=>{
           return(
-        <tr onClick={()=>navigate(`/candidat/${candidat.id}`)} key={index}>
+        <tr onClick={()=>navigate(`/candidat/${candidat.id}`)} key={index} style={{cursor:"pointer"}}>
         <td ></td>
         <td class="text-center">{candidat.id}</td>
         <td class="text-center w-25">{candidat.name.split(" ")[1]}</td>
