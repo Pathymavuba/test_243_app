@@ -20,11 +20,14 @@ const Candidat = () => {
     <div className='parent-candidat'>
       <h5>Voici les vidéo de {candidats.find(item=>item.id===currentCandidatId).name}</h5>
       <div className='list-video'>
-        {applications.filter((data,index)=>
+        {applications.filter(data=>
         data.id === currentappliId
-        ).map((data,index)=>{
-          return(<Video link="kk" question="maman" key={index} />)
-        })}
+        ).map((data)=>
+         data.videos.map((item,key)=>{
+          return(<Video src={item.src} question={questions.find(question=>question.id===item.questionId).question} key={key} />)
+         })
+         
+        )}
           
       </div>
     </div>

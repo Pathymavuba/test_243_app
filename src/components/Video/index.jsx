@@ -1,14 +1,14 @@
 import React from "react";
 import "./styled.css";
 
-const Video = ({link,question}) => {
+const Video = ({src,question}) => {
   
   return (
     <>
      <div className="parent-video">
       <video width="450" height="350" controls>
         <source
-          src={link}
+          src={src}
           type="video/mp4"
         />
       </video>
