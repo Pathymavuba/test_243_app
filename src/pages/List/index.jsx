@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect} from 'react'
 import "./styled.css"
 import { MdDelete } from 'react-icons/md';
 import { useNavigate } from "react-router-dom";
@@ -23,6 +23,7 @@ const List = () => {
   const setApplications = applicationStore(state=>state.setApplications)
   // const currentCandidatId = currentIdStore(state=>state.currentCandidatId)
   const setCurrentCandidatId = currentIdStore(state=>state.setCurrentCandidatId)
+  const setCurrentappliId = currentIdStore(state=>state.setCurrentappliId)
   
 
 
@@ -42,6 +43,8 @@ const List = () => {
   //     setCandidats(data.candidates)
   //   })
   //  }
+
+
    useEffect(()=>{
      fetch("api.json",{
       headers : { 
@@ -54,6 +57,7 @@ const List = () => {
       setCandidats(data.candidates)
       setQuestions(data.questions)
       setApplications(data.applications)
+
     })
    
    },[setCandidats,setQuestions,setApplications])
@@ -77,7 +81,7 @@ const List = () => {
       {
         candidats.map((candidat,index)=>{
           return(
-        <tr onClick={()=>{navigate(`/candidat/${candidat.id}`); setCurrentCandidatId(candidat.id)}} key={index} style={{cursor:"pointer"}}>
+        <tr onClick={()=>{ setCurrentCandidatId(candidat.id);setCurrentappliId(candidat.applicationId);navigate(`/candidat/${candidat.id}`) }} key={index} style={{cursor:"pointer"}}>
         <td ></td>
         <td class="text-center">{candidat.id}</td>
         <td class="text-center w-25">{candidat.name.split(" ")[1]}</td>
