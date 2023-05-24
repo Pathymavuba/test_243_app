@@ -2,13 +2,18 @@ import React, { useEffect, useState } from 'react'
 import "./styled.css"
 import { MdDelete } from 'react-icons/md';
 import { useNavigate } from "react-router-dom";
+import candidatStore from '../../store/candidates';
+
 
 // import axios from 'axios';
 
 
 const List = () => {
    const navigate = useNavigate()
-   const [candidats,setCandidats]=useState([])
+  //  const [candidats,setCandidats]=useState([])
+  const candidats = candidatStore(state=>state.candidats)
+  const setCandidats = candidatStore(state=>state.setCandidats)
+   
 
 
   //  const getData = () =>{
