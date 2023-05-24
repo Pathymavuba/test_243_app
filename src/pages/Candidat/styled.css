@@ -1,3 +1,19 @@
 .parent-candidat{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    justify-content: flex-start;
+    align-items:flex-start;
+    padding: 10px 15px;
+}
+.parent-candidat h5{
+    font-size: 15px;
+    font-weight: 500;
+
+}
+.parent-candidat .list-video{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
