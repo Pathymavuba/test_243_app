@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styled.css";
 
 const Video = ({src,question}) => {
-  
+  const [showComment,setSchowComment] = useState(false)
+
+  function handlecommentaire () {
+    setSchowComment(true)
+  }
   return (
     <>
      <div className="parent-video">
@@ -18,7 +22,7 @@ const Video = ({src,question}) => {
           <button type="button" className="btn btn-primary">
             Ajouter un commentaire
           </button>
-          <button type="button" className="btn btn-secondary">
+          <button type="button" className="btn btn-secondary" onClick={handlecommentaire}>
             Voir le commentaire
           </button>
         </div>
@@ -43,13 +47,14 @@ const Video = ({src,question}) => {
         <div className="mt-3"> 
           <p>Les commentaires</p>
         </div>
-        <div className="commentaire mt-3">
+        {showComment&&(   <div className="commentaire mt-3">
 
             <ol>
                 <li>Bien reponndu </li>
             </ol>
             
-        </div>
+        </div>)}
+     
       </div>
     </div>
     
